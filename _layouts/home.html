@@ -1,7 +1,6 @@
 ---
 layout: body
 ---
-
   {% assign has_intro_is_not_empty = page.has_intro | is_not_empty %}
   {% if has_intro_is_not_empty %}
   <div class="intro">
@@ -13,16 +12,21 @@ layout: body
       </div>
       {% endif %}
       {% assign intro_actions_is_not_empty = page.intro_actions | is_not_empty %}
-      {% if intro_actions_is_not_empty %}
-      <div class="intro-cta">
-        {% for action in page.intro_actions %}
-        <a href="{{ action.url | relative_url }}" class="{% if action.type == 'primary' or action.type == 'secondary' %}button{% endif %}{% if action.type == 'secondary' %} button-secondary{% endif %}" {% assign new_window_is_not_empty = action.new_window | is_not_empty %}{% if new_window_is_not_empty %}target="_blank" rel="noopener"{% endif %}>{{ action.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
     </div>
   </div><!-- .intro -->
   {% endif %}
+  <div class="services">
+    <h3>What Milli Offers</h3>
+    <div class="services__item-container">
+      {% for service in page.services %}
+      <div class="services__item">
+        <i class="fa {{ service.icon }}"></i>
+        <div>{{ service.label }}</div>
+        <div>{{ service.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 
   
   <!-- Pagination TBD -->
