@@ -5,6 +5,7 @@ collections:
   posts:
     permalink: '/posts/:title/'
 description: Milli is a consortium of individuals and communities interested in the nurturing of archives. Archives enable diverse stories.
+contact: '[hello[at]milli[dot]link](mailto:hello@milli.link)'
 layout_style: grid
 palette: green
 header:
@@ -28,38 +29,23 @@ header:
       url: /join-us/
       type: link
 footer:
-  content: '&copy; All rights reserved.'
-  links:
-    - label: Made with ❤️
-      url: 'https://janastu.org'
-      type: link
-      new_window: true
-  has_social: false
+  content: '&copy; All rights reserved. [Made with ❤️](https://janastu.org)'
+  has_social: true
   social_links:
-    - label: Twitter
-      url: 'https://twitter.com/'
-      type: icon
-      icon_class: fa-twitter
-      new_window: true
-    - label: Instagram
-      url: 'https://www.instagram.com/'
-      type: icon
-      icon_class: fa-instagram
-      new_window: true
     - label: GitHub
       url: 'https://github.com/'
       type: icon
       icon_class: fa-github
       new_window: true
-    - label: LinkedIn
-      url: 'https://www.linkedin.com/'
+    - label: Medium
+      url: 'https://www.medium.com/'
       type: icon
-      icon_class: fa-linkedin
+      icon_class: fa-medium
       new_window: true
-    - label: DEV
-      url: 'https://dev.to/'
+    - label: Twitter
+      url: 'https://twitter.com/'
       type: icon
-      icon_class: fa-dev
+      icon_class: fa-twitter
       new_window: true
   has_subscribe: true
   subscribe_title: Subscribe for new updates

@@ -2,7 +2,7 @@
  * Site Footer
  */
 .site-footer {
-  background: _palette(bg);
+  background: _palette(green-two);
   padding-bottom: 0.83333em;
   padding-top: 2.5em;
 }
@@ -64,19 +64,29 @@
 
 @media only screen and (min-width: 601px) {
   .site-footer-inside {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-around;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 
   .site-info,
+  .contact-info,
   .social-links {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+  }
+
+  .contact-info {
+    flex-direction: column;
   }
 
   .social-links {
@@ -85,7 +95,6 @@
     flex: 0 0 auto;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    margin-left: auto;
 
     a {
       margin-left: 30px;
