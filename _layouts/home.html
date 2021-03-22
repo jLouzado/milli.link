@@ -1,41 +1,36 @@
 ---
 layout: body
 ---
-  {% assign has_intro_is_not_empty = page.has_intro | is_not_empty %}
-  {% if has_intro_is_not_empty %}
-  <div class="intro">
-    <div class="inner-md">
-      {% assign intro_content_is_not_empty = page.intro_content | is_not_empty %}
-      {% if intro_content_is_not_empty %}
-      <div class="intro-text">
-        {{ page.intro_content | markdownify }}
-      </div>
-      {% endif %}
-      {% assign intro_actions_is_not_empty = page.intro_actions | is_not_empty %}
-    </div>
-  </div><!-- .intro -->
-  {% endif %}
-  <div class="services">
+
+{% assign has_intro_is_not_empty = page.has_intro | is_not_empty %}
+<!-- prettier-ignore -->
+{% if has_intro_is_not_empty %}
+<div class="intro">
+  <div class="inner-md">
+    {% assign intro_content_is_not_empty = page.intro_content | is_not_empty %}
+    {% if intro_content_is_not_empty %}
+    <div class="intro-text">{{ page.intro_content | markdownify }}</div>
+    {% endif %}
+    <!-- prettier-ignore -->
+    {% assign intro_actions_is_not_empty = page.intro_actions | is_not_empty %}
+  </div>
+</div>
+<!-- .intro -->
+{% endif %}
+<div class="services">
+  <div class="inner-md">
     <h3>What Milli Offers</h3>
     <div class="services__item-container">
       {% for service in page.services %}
       <div class="services__item">
-        <i class="fa {{ service.icon }}"></i>
-        <div>{{ service.label }}</div>
-        <div>{{ service.description }}</div>
+        <span
+          class="icon fab {{ service.icon }} fa-4x"
+          aria-hidden="true"
+        ></span>
+        <div class="services__item--label">{{ service.label }}</div>
+        <div class="services__item--description">{{ service.description }}</div>
       </div>
       {% endfor %}
     </div>
   </div>
-
-  
-  <!-- Pagination TBD -->
-  <!--
-  <nav class="pagination">
-    <div class="nav-links">
-      <a class="older-posts button" href="#"><span class="icon-arrow-left" aria-hidden="true"></span><span class="screen-reader-text">Older posts</span></a>
-      <span class="page-number">Page X of Y</span>
-      <a class="newer-posts button" href="#"><span class="screen-reader-text">Newer posts</span><span class="icon-arrow-right" aria-hidden="true"></span></a>
-    </div>
-  </nav>
-  -->
+</div>

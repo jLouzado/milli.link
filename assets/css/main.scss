@@ -3,11 +3,18 @@
 
 // Font.
 $font: (
-  primary: ("Roboto", sans-serif),
-  secondary: ("PT Serif", serif)
+  primary: (
+    "Roboto",
+    sans-serif,
+  ),
+  secondary: (
+    "PT Serif",
+    serif,
+  ),
 );
 
 // Palette.
+/* prettier-ignore */
 $palette: (
   primary:       #536171,
   secondary:     darken(#536171, 15%),
@@ -17,7 +24,13 @@ $palette: (
   accent:        #3cb464,
   accent-blue:   #108afb,
   accent-black:  #333b45,
-  accent-red:    #f8646c
+  accent-red:    #f8646c,
+  // TODO: choose a semantic name here and in Figma
+  green-one:     #96B753,
+  green-two:     #C6E686,
+  green-three:   #446418,
+  green-four:    #7D9B5D
+  ,
 );
 
 @import "imports/functions";
@@ -27,6 +40,7 @@ $palette: (
 
 @import "imports/reset";
 @import "imports/general";
+@import "imports/body";
 @import "imports/icons";
 @import "imports/structure";
 @import "imports/header";
