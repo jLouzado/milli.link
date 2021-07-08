@@ -1,25 +1,34 @@
 <footer id="colophon" class="site-footer outer">
   <div class="inner">
     <div class="site-footer-inside">
+      {% assign logo_img_is_not_empty = site.header.logo_img | is_not_empty %}
+      {% if logo_img_is_not_empty %}
+      <a href='{{ '/' | relative_url }}'><img src="{{ site.header.logo_img | relative_url }}"
+            alt="{{ site.header.title }} Logo" /></a>
+      {% endif %}
+      {% assign has_contact_info = site.contact | is_not_empty %}
+      {% if has_contact_info %}
+      <div class="contact-info">
+        <div>Contact</div>
+        <div>{{ site.contact | markdownify }}</div>
+      </div>
+      {% endif %}
+      <!-- prettier-ignore -->
+      {% assign has_social_is_not_empty = site.footer.has_social | is_not_empty %} 
+      {% if has_social_is_not_empty %}
+      <div class="social-links">
+        <!-- prettier-ignore -->
+        {% for action in site.footer.social_links %}
+          {% include action_link.html action=action %}
+        {% endfor %}
+      </div>
+      {% endif %}
       <div class="site-info">
         {% assign content_is_not_empty = site.footer.content | is_not_empty %}
         {% if content_is_not_empty %}
-        <span class="copyright">{{ site.footer.content }}</span>
+        <span class="copyright">{{ site.footer.content | markdownify }}</span>
         {% endif %}
-        {% for action in site.footer.links %}
-          
-          {% include action_link.html action=action %}
-        {% endfor %}
-      </div><!-- .site-info -->
-      {% assign has_social_is_not_empty = site.footer.has_social | is_not_empty %}
-      {% if has_social_is_not_empty %}
-      <div class="social-links">
-        {% for action in site.footer.social_links %}
-          
-          {% include action_link.html action=action %}
-        {% endfor %}
-      </div><!-- .social-links -->
-      {% endif %}
-    </div><!-- .site-footer-inside -->
-  </div><!-- .inner -->
-</footer><!-- .site-footer -->
+      </div>
+    </div>
+  </div>
+</footer>

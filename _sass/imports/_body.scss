@@ -1,0 +1,14 @@
+.services {
+  &__item-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-basis: 150px;
+  }
+
+  &__item--label {
+    color: _palette(green-four);
+  }
+}
